@@ -104,13 +104,21 @@
         };
 
         Selecty.prototype.remove = function (value) {
-            
+            this.$select.find('option[value="' + value + '"]').remove();
+            this.updateList();
         };
 
         Selecty.prototype.destroy = function () {
-            this.$select.off('.' + this.className);
+            // Any cleanup or removal logic you need
+            this.$select.off('.' + this.className); // Unbind any event handlers
+        
+            // Remove any additional elements or styles added by the plugin
             this.$container.remove();
+        
+            // Remove data associated with the plugin instance
             this.$select.removeData(this.className);
+        
+            // Optionally trigger a custom destroy event
             this.$select.trigger(this.prefix + ':destroy');
         };        
 
@@ -218,9 +226,9 @@
         };
 
         Selecty.prototype.updateList = function () {
-            if (this.isOpen) {
+            /*if (this.isOpen) {
                 this.openList();
-            }
+            }*/
             this.$select.trigger(this.prefix + ':update');
         };
 
