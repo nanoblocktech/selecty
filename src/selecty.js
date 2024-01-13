@@ -108,16 +108,9 @@
         };
 
         Selecty.prototype.destroy = function () {
-            // Any cleanup or removal logic you need
-            this.$select.off('.' + this.className); // Unbind any event handlers
-        
-            // Remove any additional elements or styles added by the plugin
+            this.$select.off('.' + this.className);
             this.$container.remove();
-        
-            // Remove data associated with the plugin instance
             this.$select.removeData(this.className);
-        
-            // Optionally trigger a custom destroy event
             this.$select.trigger(this.prefix + ':destroy');
         };        
 
