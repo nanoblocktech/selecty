@@ -1,4 +1,9 @@
 Setup
+```html
+<script src="path/js/jquery.min.js"></script>
+<script src="path/js/selecty.min.js"></script>
+<link rel="stylesheet" href="path/css/selecty.min.css">
+```
 
 ```js
 	$selector = $('selecty').Selecty();
