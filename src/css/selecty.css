@@ -1,0 +1,102 @@
+:root {
+  --color-selecty-background: #fff;
+  --color-selecty-heading: #eee;
+  --color-selecty-link: blue;
+  --color-selecty-active-color: #fff
+  --color-selecty-border: #5b5555;
+  --color-selecty-active: blue;
+}
+
+.selecty-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1090;
+}
+
+.selecty-hidden-accessible {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important; 
+}
+
+.selecty-inner-container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+ul.selecty-list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-selecty-background);
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100vh - 250px);
+}
+
+.selecty-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--color-selecty-heading);
+    font-weight: bold;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.selecty-heading span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 80%; 
+}
+
+.selecty-close {
+    margin-left: auto;
+    background-color: transparent;
+    color: var(--color-selecty-link);
+    border: 0px;
+}
+
+.selecty-item {
+  border-top: 1px solid var(--color-selecty-border);
+	padding: 10px  !important;
+	font-size: 17px  !important;
+  cursor: pointer;
+}
+
+li.selecty-item:empty { 
+    display: none 
+}
+
+.selecty-item[data-selected="true"]{
+    background-color: var(--color-selecty-active);
+	  color: var(--color-selecty-active-color);
+}
+
+.selecty-item[aria-disabled="true"]:first-child {
+    display: none !important;
+}
+
+.selecty-item[aria-disabled="true"] {
+	  opacity: 0.2;
+    cursor: no-drop;
+}
