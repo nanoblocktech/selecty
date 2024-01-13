@@ -1,11 +1,4 @@
-
-```js
-	$selector.Selecty('open');
-	$selector.Selecty('close');
-	$selector.Selecty('destroy');
-	$selector.Selecty('add', "key", "Value");
-	$selector.Selecty('remove', "key");
-```
+Setup
 
 ```js
 	$selector = $('selecty').Selecty();
@@ -23,4 +16,35 @@
 	}).on("selecty:close",function(){
 		console.log("Close");
 	});
+```
+
+
+Public methods
+```js
+	$selector.Selecty('open');
+	$selector.Selecty('close');
+	$selector.Selecty('destroy');
+	$selector.Selecty('add', "key", "Value");
+	$selector.Selecty('remove', "key");
+```
+
+
+Options 
+
+```js
+{
+ 	dropdownParent: $('body'),
+	theme: 'full',
+	width: '100%',
+	multiple: false,
+	dropdownCssClass: '',
+	selectionCssClass: '',
+	title: '',
+	closeText: 'Close',
+	placeholder: 'Option',
+	template: function (option) {
+		return option.text;
+	},
+	initialOptions: []
+}
 ```
